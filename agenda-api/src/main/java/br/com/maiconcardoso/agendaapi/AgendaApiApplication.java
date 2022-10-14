@@ -5,20 +5,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import br.com.maiconcardoso.agendaapi.models.ContatoModel;
-import br.com.maiconcardoso.agendaapi.repositories.ContatoRepository;
+import br.com.maiconcardoso.agendaapi.models.ContactModel;
+import br.com.maiconcardoso.agendaapi.repositories.ContactRepository;
 import lombok.RequiredArgsConstructor;
 
 @SpringBootApplication
 @RequiredArgsConstructor
 public class AgendaApiApplication {
 
-	private final ContatoRepository contatoRepository;
+	private final ContactRepository contatoRepository;
 
 	@Bean
 	public CommandLineRunner runner() {
 		return args -> {
-			ContatoModel contato = new ContatoModel(null, "Maria", "maria@gmail.com", true);
+			ContactModel contato = new ContactModel(null, "Maria", "maria@gmail.com", true);
 			contatoRepository.save(contato);
 		};
 	}
